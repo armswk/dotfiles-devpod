@@ -1,0 +1,5 @@
+[".config/nvim"]
+type = "archive"
+url = "https://codeload.github.com/LazyVim/starter/tar.gz/refs/heads/main"
+stripComponents = 1
+exclude =["**/options.lua"]
