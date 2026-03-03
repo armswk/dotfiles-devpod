@@ -6,3 +6,6 @@ vim.opt.ignorecase = true
 vim.opt.number = false
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 8
+
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
