@@ -86,3 +86,10 @@ if command -v lsd > /dev/null ; then
   alias lla='ls -lgha'
   alias lt='ls --tree'
 fi
+
+# ~~~~~~~~~~~~~~~ Others ~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Allow Docker containers to connect to the display (only if on host)
+if [ ! -f /.dockerenv ] && command -v xhost >/dev/null 2>&1; then
+    xhost +local:docker >/dev/null 2>&1
+fi
