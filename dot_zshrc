@@ -70,6 +70,7 @@ fi
 alias v=nvim
 alias gp="git pull"
 alias lg=lazygit
+alias devtem='git clone git@github.com:armswk/devcontainer-template.git .'
 
 if command -v nala > /dev/null ; then
   alias apt='\nala'
