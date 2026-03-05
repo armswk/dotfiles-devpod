@@ -1,4 +1,5 @@
 [tools]
+lua = "latest"
 bat = "latest"
 chezmoi = "latest"
 fzf = "latest"
