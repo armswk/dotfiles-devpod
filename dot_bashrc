@@ -163,3 +163,4 @@ fi
 ## CUSTOMIZATION ##
 set -o vi
 eval "$(mise activate bash)"
+alias k = kubectl
