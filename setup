@@ -12,12 +12,19 @@ if ! command -v chezmoi >/dev/null; then
   sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:armswk/dotfiles-devpod.git
 fi
 
-if [ ! -d "$HOME/.zsh" ]; then
-  mkdir -p "$HOME/.zsh"
-fi
+if [[ "$OSTYPE" == darwin* ]]; then
+  if ! command -v brew >/dev/null; then
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+  brew list pure >/dev/null 2>&1 || brew install pure
+else
+  if [ ! -d "$HOME/.zsh" ]; then
+    mkdir -p "$HOME/.zsh"
+  fi
 
-if [ ! -d "$HOME/.zsh/pure" ]; then
-  git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+  if [ ! -d "$HOME/.zsh/pure" ]; then
+    git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+  fi
 fi
 
 if command -v alacritty >/dev/null; then
